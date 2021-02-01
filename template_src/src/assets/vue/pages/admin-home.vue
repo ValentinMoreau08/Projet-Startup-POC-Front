@@ -28,6 +28,9 @@
       <f7-list-item link="/lists-admin/" title="Liste de tous les utilisateurs" panel-close>
         <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
       </f7-list-item>
+            <f7-list-item link="/listProjects-admin/" title="Liste des projets" panel-close>
+        <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
+      </f7-list-item>
       <!-- <f7-list-item link="/form/" title="Form" panel-close>
         <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
       </f7-list-item>

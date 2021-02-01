@@ -6,7 +6,8 @@ import DynamicRoutePage from './assets/vue/pages/dynamic-route.vue';
 import AdminListsPage from './assets/vue/pages/listsAdmin.vue';
 import AdminHomePage from './assets/vue/pages/admin-home.vue';
 import AdminUserDetailPage from './assets/vue/pages/admin-userDetails.vue'
-
+import AdminListProjectsPage from './assets/vue/pages/admin-listProjects.vue'
+import AdminProjectDetailsPage from './assets/vue/pages/admin-projectDetails.vue'
 
 import PanelLeftPage from './assets/vue/pages/panel-left.vue';
 import ColorThemes from './assets/vue/pages/color-themes.vue';
@@ -27,8 +28,16 @@ export default [
     component: AdminListsPage
   },
   {
+    path: '/listProjects-admin/',
+    component: AdminListProjectsPage
+  },
+  {
     path: '/admin-userDetails/:id/',
     component: AdminUserDetailPage
+  },
+  {
+    path: '/admin-projectDetails/:id/',
+    component: AdminProjectDetailsPage
   },
   {
     path: '/about/',
