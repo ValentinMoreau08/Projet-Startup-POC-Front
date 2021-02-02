@@ -1,10 +1,23 @@
 <template>
   <f7-page>
-    <f7-navbar large title="About" title-large="Les projets" back-link="Framework7"></f7-navbar>
-  
-    <f7-block-title>Liste des projets</f7-block-title>
-        <f7-list>
-        <f7-list-item v-for="project in projects" :key="project.id" :title="project.name" @click="getProject(project.id)">
+    <f7-navbar large title="About" title-large="Les projets" back-link="Framework7">
+   <f7-nav-right>
+        <f7-link
+          class="searchbar-enable"
+          data-searchbar=".searchbar-components"
+          icon="fas fa-search"
+        ></f7-link>
+      </f7-nav-right>
+            <f7-searchbar
+        class="searchbar-components"
+        search-container=".components-list"
+        search-in="a"
+        expandable
+      ></f7-searchbar>
+      </f7-navbar>
+    <f7-block-title class="searchbar-found">Liste des projets</f7-block-title>
+        <f7-list class="components-list searchbar-found">
+        <f7-list-item v-for="project in projects" :key="project.id" :title="project.name" :link="`/admin-projectDetails/${project.id}/`" after="Voir plus de détails">
                 <!-- :link="`/insecte/${insecte.id}/`" media="static/img/icon-insecte.png"> -->
             </f7-list-item>
         </f7-list>    
@@ -51,20 +64,6 @@ app.preloader.show();
   );
 
 
-    },
-
-        methods: {
-        getProject: function(id)
-        {      
-             const self = this;
-             const app = self.$f7;
-            const router = self.$f7router;
-            router.back(`/admin-projectDetails/${id}/`, {
-              ignoreCache: true,
-              force: true,
-              context: {}
-            });
-        }
     },
         data: function () {
 

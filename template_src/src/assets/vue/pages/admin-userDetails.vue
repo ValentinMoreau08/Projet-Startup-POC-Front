@@ -5,6 +5,14 @@
     <f7-list>
         <f7-chip v-if="user.role !==undefined" :text="user.role.label" color="red"></f7-chip>
         <div class="row no-gap">
+          <div class="col"> <strong> ID: </strong></div>
+          <div class="col">  {{ user.id}} </div>
+        </div>
+        <div class="row no-gap">
+          <div class="col"> <strong> Login: </strong></div>
+          <div class="col">  {{ user.login}} </div>
+        </div>
+        <div class="row no-gap">
           <div class="col"> <strong> Prénom: </strong></div>
           <div class="col">  {{ user.firstname}} </div>
         </div>
@@ -12,7 +20,6 @@
           <div class="col"> <strong> Nom: </strong></div>
           <div class="col">  {{ user.name}} </div>
         </div>         
-        
         <div class="row no-gap" v-if="user.manager !== undefined && user.manager !== null ">          
             <div class="col"> <strong> Manager: </strong></div>
           <div class="col" @click="getUser(user.manager.id)">  {{user.manager.firstname}} </div>

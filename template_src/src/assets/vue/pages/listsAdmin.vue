@@ -1,6 +1,24 @@
 <template>
   <f7-page>
-    <f7-navbar large title="About" title-large="Les utilisateurs" back-link="Framework7"></f7-navbar>
+   <f7-navbar>
+      <f7-nav-left>
+        <f7-link class="panel-open" open-panel="left" icon="fas fa-bars"></f7-link>
+      </f7-nav-left>
+      <div class="title">Les utilisateurs</div>
+      <f7-nav-right>
+        <f7-link
+          class="searchbar-enable"
+          data-searchbar=".searchbar-components"
+          icon="fas fa-search"
+        ></f7-link>
+      </f7-nav-right>
+      <f7-searchbar
+        class="searchbar-components"
+        search-container=".components-list"
+        search-in="a"
+        expandable
+      ></f7-searchbar>
+    </f7-navbar>
     <f7-toolbar tabbar bottom>
         <f7-link tab-link="#tab-1" tab-link-active>Tous les utilisateurs</f7-link>
         <f7-link tab-link="#tab-2">Les admins</f7-link>
@@ -9,33 +27,33 @@
   </f7-toolbar>
     <f7-tabs swipeable>
  <f7-tab id="tab-1" tab-active>
-    <f7-block-title>Liste de tous les utilisateurs</f7-block-title>
-        <f7-list >
-        <f7-list-item v-for="user in users" :key="user.id" :title="user.firstname"  @click="getUser(user.id)">
+    <f7-block-title class="searchbar-found">Liste de tous les utilisateurs</f7-block-title>
+        <f7-list class="components-list searchbar-found">
+        <f7-list-item v-for="user in users" :key="user.id" :title="user.firstname"  :link="`/admin-userDetails/${user.id}/`" after="Voir plus de détails">
                 <!-- :link="`/insecte/${insecte.id}/`" media="static/img/icon-insecte.png"> -->
             </f7-list-item>
         </f7-list>    
  </f7-tab>
  <f7-tab id="tab-2"  >
-    <f7-block-title>Liste des administrateurs</f7-block-title>
-        <f7-list>
-        <f7-list-item v-for="admin in admins" :key="admin.id" :title="admin.firstname" @click="getUser(admin.id)">
+    <f7-block-title class="searchbar-found">Liste des administrateurs</f7-block-title>
+        <f7-list class="components-list searchbar-found">
+        <f7-list-item v-for="admin in admins" :key="admin.id" :title="admin.firstname" :link="`/admin-userDetails/${admin.id}/`" after="Voir plus de détails">
                 <!-- :link="`/insecte/${insecte.id}/`" media="static/img/icon-insecte.png"> -->
             </f7-list-item>
         </f7-list>    
  </f7-tab>
   <f7-tab id="tab-3" >
-    <f7-block-title>Liste des développeurs</f7-block-title>
-        <f7-list>
-        <f7-list-item v-for="developer in developers" :key="developer.id" :title="developer.firstname" @click="getUser(developer.id)">
+    <f7-block-title class="searchbar-found">Liste des développeurs</f7-block-title>
+        <f7-list class="components-list searchbar-found">
+        <f7-list-item v-for="developer in developers" :key="developer.id" :title="developer.firstname" :link="`/admin-userDetails/${developer.id}/`" after="Voir plus de détails">
                 <!-- :link="`/insecte/${insecte.id}/`" media="static/img/icon-insecte.png"> -->
             </f7-list-item>
         </f7-list>    
  </f7-tab>
  <f7-tab id="tab-4"  >
-    <f7-block-title>Liste des managers</f7-block-title>
-        <f7-list>
-        <f7-list-item v-for="manager in managers" :key="manager.id" :title="manager.firstname" @click="getUser(manager.id)">
+    <f7-block-title class="searchbar-found" >Liste des managers</f7-block-title>
+        <f7-list class="components-list searchbar-found" >
+        <f7-list-item v-for="manager in managers" :key="manager.id" :title="manager.firstname" :link="`/admin-userDetails/${manager.id}/`" after="Voir plus de détails">
                 <!-- :link="`/insecte/${insecte.id}/`" media="static/img/icon-insecte.png"> -->
             </f7-list-item>
         </f7-list>    
@@ -124,19 +142,6 @@ app.preloader.show();
   );
     },
 
-        methods: {
-        getUser: function(id)
-        {      
-             const self = this;
-             const app = self.$f7;
-            const router = self.$f7router;
-            router.back(`/admin-userDetails/${id}/`, {
-              ignoreCache: true,
-              force: true,
-              context: {}
-            });
-        }
-    },
         data: function () {
 
       return {

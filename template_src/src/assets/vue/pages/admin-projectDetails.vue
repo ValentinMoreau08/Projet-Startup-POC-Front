@@ -1,12 +1,28 @@
 <template>
   <f7-page>
-    <f7-navbar large title="About" title-large="Les utilisateurs" back-link="Framework7"></f7-navbar>
- <f7-block-title>Details </f7-block-title>
-    <f7-list>
-        <div class="row no-gap">
-          <div class="col"> <strong> Projet: </strong></div>
-          <div class="col">  {{ project.name}} </div>
-        </div>
+    <f7-navbar large title="About" title-large="Les projets" back-link="Framework7"></f7-navbar>
+    <div class="block-title block-title-medium">{{ project.name}}</div>
+    <f7-block inner>
+      <p> <strong> Client :</strong> {{ project.clientName}} </p>
+      <p> <strong>Description :</strong> {{project.description}} </p>
+    </f7-block>
+      <f7-block-title>Les temps saisis</f7-block-title>
+  <f7-list accordion-list inset>
+    <f7-list-item accordion-item title="Les temps en détail">
+      <f7-accordion-content>
+        <f7-block>
+              <f7-list media-list v-if="project.times !==undefined && project.times !== null ">
+               <f7-list-item v-for="thistime in project.times" :key="thistime.id" :link="`/admin-userDetails/${thistime.user.id}/`" :header="thistime.user.firstname" :subtitle="'Temps saisi :'+thistime.time" :after="thistime.date"></f7-list-item>
+              </f7-list>
+    
+        </f7-block>
+      </f7-accordion-content>
+    </f7-list-item>
+        <f7-list-item accordion-item title="Temps total passé sur ce projet">
+        </f7-list-item>
+  </f7-list>
+          <!-- <p > <strong> Projet: </strong></p>
+          <p class="col">  {{ project.name}} </p>
         <div class="row no-gap">
           <div class="col"> <strong> Client: </strong></div>
           <div class="col">  {{ project.clientName}} </div>
@@ -15,14 +31,13 @@
         <div class="row no-gap" >          
             <div class="col"> <strong> Description: </strong></div>
           <div class="col">  {{project.description}} </div>
-        </div>
+        </div> -->
 
     <f7-link @click="$f7router.back(`/listProjects-admin/`, {
               ignoreCache: true,
               force: true,
               context: {}
             })">back</f7-link>
-    </f7-list>
   </f7-page>
 </template>
 <script>
