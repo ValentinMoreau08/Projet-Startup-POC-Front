@@ -36,7 +36,13 @@
         title="Liste des projets"
         panel-close
       >
-      
+        <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
+      </f7-list-item>
+      <f7-list-item
+        title="Générer compte-rendu (docx)"
+        v-on:click="generateDoc()"
+        panel-close
+      >
         <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
       </f7-list-item>
       <f7-list-item
@@ -85,7 +91,14 @@
   </f7-page>
 </template>
 <script>
+import Axios from "axios";
+
 export default {
-  components: {}
+  components: {},
+  methods: {
+    generateDoc: function() {
+      Axios.get("http://localhost:8180" + "/users/1/exportDoc");
+    }
+  }
 };
 </script>
