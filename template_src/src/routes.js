@@ -13,6 +13,8 @@ import AdminProjectDetailsPage from './assets/vue/pages/admin-projectDetails.vue
 import UserListProjectsPage from './assets/vue/pages/user-listProjects.vue';
 import UserHomePage from './assets/vue/pages/user-home.vue';
 
+import CreateTimePage from './assets/vue/pages/create-time.vue';
+
 import PanelLeftPage from './assets/vue/pages/panel-left.vue';
 import ColorThemes from './assets/vue/pages/color-themes.vue';
 import Chat from './assets/vue/pages/chat.vue';
@@ -78,5 +80,9 @@ export default [
   {
     path: '/vuex/',
     component: Vuex
+  },
+  {
+    path: '/create-time/',
+    component: CreateTimePage
   },
 ];
