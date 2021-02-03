@@ -92,11 +92,7 @@ export default {
   components: {},
   methods: {
     generateDoc: function() {
-      Axios.get("http://localhost:8180" + "/users/1/exportDoc").then(
-        response => {
-          console.log("fichier généré");
-        }
-      );
+      Axios.get("http://localhost:8180" + "/users/1/exportDoc");
     }
   }
 };
