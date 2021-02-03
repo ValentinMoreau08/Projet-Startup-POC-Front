@@ -31,13 +31,19 @@
             <f7-list-item link="/listProjects-admin/" title="Liste des projets" panel-close>
         <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
       </f7-list-item>
+
+      <f7-list-item link="/addUser-admin/" title="Ajouter un utilisateur" panel-close>
+        <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
+      </f7-list-item>
+      <f7-list-item link="/changeManager-admin/" title="Changer le manager d'un développeur" panel-close>
+
       <f7-list-item link="/create-project/" title="Ajouter un projet" panel-close>
         <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
       </f7-list-item>
       <!-- <f7-list-item link="/form/" title="Form" panel-close>
         <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
       </f7-list-item>
-            <f7-list-item link="/admin-home/" title="ADMIN HOME" panel-close>
+          <!--  <f7-list-item link="/admin-home/" title="ADMIN HOME" panel-close>
         <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
       </f7-list-item>
       <f7-list-item link="/dynamic-route/blog/11/post/23/" title="Dynamic Route" panel-close>

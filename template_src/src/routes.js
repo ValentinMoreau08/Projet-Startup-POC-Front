@@ -9,6 +9,9 @@ import AdminUserDetailPage from './assets/vue/pages/admin-userDetails.vue';
 import AdminListProjectsPage from './assets/vue/pages/admin-listProjects.vue';
 import AdminProjectDetailsPage from './assets/vue/pages/admin-projectDetails.vue';
 
+import AdminAddUserPage from './assets/vue/pages/addUser-admin.vue';
+import AdminChangeManagerPage from './assets/vue/pages/admin-changeManager.vue';
+
 //USER
 import UserListProjectsPage from './assets/vue/pages/user-listProjects.vue';
 import UserHomePage from './assets/vue/pages/user-home.vue';
@@ -19,6 +22,7 @@ import ManagerHomePage from './assets/vue/pages/manager-home.vue';
 
 import CreateTimePage from './assets/vue/pages/create-time.vue';
 import CreateProjectPage from './assets/vue/pages/create-project.vue';
+
 
 import PanelLeftPage from './assets/vue/pages/panel-left.vue';
 import ColorThemes from './assets/vue/pages/color-themes.vue';
@@ -49,6 +53,14 @@ export default [
   {
     path: '/admin-projectDetails/:id/',
     component: AdminProjectDetailsPage
+  },
+  {
+    path: '/addUser-admin/',
+    component: AdminAddUserPage
+  },
+  {
+    path: '/changeManager-admin/',
+    component: AdminChangeManagerPage
   },
   {
     path: '/user-home/',
