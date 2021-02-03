@@ -8,7 +8,7 @@
           icon="fas fa-bars"
         ></f7-link>
       </f7-nav-left>
-      <div class="title">Framework7-Vue</div>
+      <div class="title">User Home</div>
       <f7-nav-right>
         <f7-link
           class="searchbar-enable"
@@ -23,29 +23,28 @@
         expandable
       ></f7-searchbar>
     </f7-navbar>
-    <f7-block-title>Introduction test</f7-block-title>
-    <f7-block inner>
+    <f7-block-title>Accueil utilisateur</f7-block-title>
+    <!-- <f7-block inner>
       <p>This is template for Framework75, Vue and Phonegap.</p>
-    </f7-block>
-    <f7-block-title class="searchbar-found">Links</f7-block-title>
+    </f7-block> -->
+    <f7-block-title class="searchbar-found"
+      >Qu'est-ce que je peux faire ?</f7-block-title
+    >
     <f7-list class="components-list searchbar-found">
-      <f7-list-item link="/about/" title="About" panel-close>
-        <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
-      </f7-list-item>
-      <f7-list-item link="/form/" title="Form" panel-close>
-        <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
-      </f7-list-item>
-      <f7-list-item link="/admin-home/" title="ADMIN HOME" panel-close>
-        <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
-      </f7-list-item>
-      <f7-list-item link="/user-home/" title="User HOME" panel-close>
-        <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
-      </f7-list-item>
       <f7-list-item
-        link="/dynamic-route/blog/11/post/23/"
-        title="Dynamic Route"
+        link="/listProjects-user/"
+        title="Liste des projets"
         panel-close
       >
+        <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
+      </f7-list-item>
+      <!-- <f7-list-item link="/form/" title="Form" panel-close>
+        <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
+      </f7-list-item>
+            <f7-list-item link="/admin-home/" title="ADMIN HOME" panel-close>
+        <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
+      </f7-list-item>
+      <f7-list-item link="/dynamic-route/blog/11/post/23/" title="Dynamic Route" panel-close>
         <f7-icon slot="media" icon="fas fa-rss fa-fw"></f7-icon>
       </f7-list-item>
       <f7-list-item link="/chat/" title="Chat" panel-close>
@@ -53,7 +52,7 @@
       </f7-list-item>
       <f7-list-item link="/vuex/" title="Vuex" panel-close>
         <f7-icon slot="media" icon="fas fa-battery-empty fa-fw"></f7-icon>
-      </f7-list-item>
+      </f7-list-item> -->
     </f7-list>
     <f7-list class="searchbar-not-found">
       <f7-list-item title="Nothing found"></f7-list-item>
