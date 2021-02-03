@@ -2,7 +2,11 @@
   <f7-page>
     <f7-navbar>
       <f7-nav-left>
-        <f7-link class="panel-open" open-panel="left" icon="fas fa-bars"></f7-link>
+        <f7-link
+          class="panel-open"
+          open-panel="left"
+          icon="fas fa-bars"
+        ></f7-link>
       </f7-nav-left>
       <div class="title">Framework7-Vue</div>
       <f7-nav-right>
@@ -31,10 +35,20 @@
       <f7-list-item link="/form/" title="Form" panel-close>
         <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
       </f7-list-item>
-            <f7-list-item link="/admin-home/" title="ADMIN HOME" panel-close>
+      <f7-list-item link="/admin-home/" title="ADMIN HOME" panel-close>
         <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
       </f7-list-item>
-      <f7-list-item link="/dynamic-route/blog/11/post/23/" title="Dynamic Route" panel-close>
+      <f7-list-item link="/manager-home/" title="MANAGER HOME" panel-close>
+        <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
+      </f7-list-item>
+      <f7-list-item link="/user-home/" title="USER HOME" panel-close>
+        <f7-icon slot="media" icon="fas fa-id-card-alt fa-fw"></f7-icon>
+      </f7-list-item>
+      <f7-list-item
+        link="/dynamic-route/blog/11/post/23/"
+        title="Dynamic Route"
+        panel-close
+      >
         <f7-icon slot="media" icon="fas fa-rss fa-fw"></f7-icon>
       </f7-list-item>
       <f7-list-item link="/chat/" title="Chat" panel-close>
@@ -49,10 +63,22 @@
     </f7-list>
     <f7-block-title class="searchbar-hide-on-search">Themes</f7-block-title>
     <f7-list class="searchbar-hide-on-search">
-      <f7-list-item title="iOS Theme" external link="./index.html?theme=ios"></f7-list-item>
-      <f7-list-item title="Material (MD) Theme" external link="./index.html?theme=md"></f7-list-item>
+      <f7-list-item
+        title="iOS Theme"
+        external
+        link="./index.html?theme=ios"
+      ></f7-list-item>
+      <f7-list-item
+        title="Material (MD) Theme"
+        external
+        link="./index.html?theme=md"
+      ></f7-list-item>
       <f7-list-item title="Color Themes" link="/color-themes/"></f7-list-item>
-      <f7-list-item title="Github" external link="https://github.com/kevinqqnj"></f7-list-item>
+      <f7-list-item
+        title="Github"
+        external
+        link="https://github.com/kevinqqnj"
+      ></f7-list-item>
     </f7-list>
   </f7-page>
 </template>
