@@ -12,6 +12,8 @@ import AdminProjectDetailsPage from './assets/vue/pages/admin-projectDetails.vue
 //USER
 import UserListProjectsPage from './assets/vue/pages/user-listProjects.vue';
 import UserHomePage from './assets/vue/pages/user-home.vue';
+import UserTimesPage from './assets/vue/pages/user-times.vue';
+
 
 import CreateTimePage from './assets/vue/pages/create-time.vue';
 
@@ -52,6 +54,10 @@ export default [
   {
     path: '/listProjects-user/',
     component: UserListProjectsPage
+  },
+  {
+    path: '/times-user/',
+    component: UserTimesPage
   },
   {
     path: '/about/',
