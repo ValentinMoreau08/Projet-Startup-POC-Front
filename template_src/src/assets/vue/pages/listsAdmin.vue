@@ -1,6 +1,6 @@
 <template>
   <f7-page>
-   <f7-navbar>
+   <f7-navbar back-link="Back">
       <f7-nav-left>
         <f7-link class="panel-open" open-panel="left" icon="fas fa-bars"></f7-link>
       </f7-nav-left>
