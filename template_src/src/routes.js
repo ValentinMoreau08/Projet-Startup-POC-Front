@@ -14,8 +14,11 @@ import UserListProjectsPage from './assets/vue/pages/user-listProjects.vue';
 import UserHomePage from './assets/vue/pages/user-home.vue';
 import UserTimesPage from './assets/vue/pages/user-times.vue';
 
+//MANAGER
+import ManagerHomePage from './assets/vue/pages/manager-home.vue';
 
 import CreateTimePage from './assets/vue/pages/create-time.vue';
+import CreateProjectPage from './assets/vue/pages/create-project.vue';
 
 import PanelLeftPage from './assets/vue/pages/panel-left.vue';
 import ColorThemes from './assets/vue/pages/color-themes.vue';
@@ -90,5 +93,13 @@ export default [
   {
     path: '/create-time/',
     component: CreateTimePage
+  },
+  {
+    path: '/create-project/',
+    component: CreateProjectPage
+  },
+  {
+    path: '/manager-home/',
+    component: ManagerHomePage
   },
 ];
