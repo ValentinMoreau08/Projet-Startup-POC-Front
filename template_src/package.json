@@ -18,6 +18,8 @@
     "cheerio": "^1.0.0-rc.3",
     "chokidar": "^3.1.1",
     "clean-webpack-plugin": "^3.0.0",
+    "cordova-browser": "^6.0.0",
+    "cordova-plugin-whitelist": "1",
     "css-loader": "^3.2.0",
     "current-device": "^0.10.0",
     "epipebomb": "^1.0.0",
@@ -40,8 +42,7 @@
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.1",
-    "webpack-merge": "^4.2.2",
-    "cordova-plugin-whitelist": "1"
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.1",
@@ -53,12 +54,16 @@
     "loglevel": "^1.6.4",
     "material-design-icons": "^3.0.1",
     "q": "^1.5.1",
+    "shelljs": "^0.8.4",
     "vue": "^2.6.10",
     "vuex": "^3.1.1"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {}
-    }
+    },
+    "platforms": [
+      "browser"
+    ]
   }
 }

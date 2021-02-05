@@ -1,6 +1,10 @@
 <template>
   <f7-page>
-    <f7-navbar title="Ajouter un utilisateur" back-link="Back"></f7-navbar>
+    <f7-navbar title="Ajouter un utilisateur" back-link="Back">
+            <f7-nav-left>
+        <f7-link class="panel-open" open-panel="left" icon="fas fa-bars"></f7-link>
+      </f7-nav-left>
+    </f7-navbar>
     <div class="block block-strong">
       <p>Ajouter un utilisateur</p>
     </div>
@@ -39,10 +43,19 @@
             </div>
           </div>
         </li>
+        <li class="item-content item-input">
+          <div class="item-inner">
+            <div class="item-title item-label">Rôle</div>
+            <div class="item-input-wrap">
+              <input v-for="role in roles" :key="role.id" :value="role.id" name="role" type="radio" placeholder="Password" required validate>
+            </div>
+          </div>
+        </li>
         
       </ul>
     </form>
-    <f7-button @click="addUser">Ajouter</f7-button>
+
+    <f7-button fill @click="addUser">Ajouter</f7-button>
   </f7-page>
 </template>
 
@@ -53,7 +66,11 @@ export default {
   data: function() {
       return {
         errors: [],
-        projects: []
+        projects: [],
+        form:
+        {
+          roleId:' '
+        }
       }
   },
   props: {
@@ -70,12 +87,24 @@ export default {
   methods: {
     // Post method to create time with body
     addUser() {
+          Axios.get("http://localhost:8180"+'/roles').then(response => {
+      this.roles = response.data;
+      app.preloader.hide();
+
+    //  console.log(response.data)
+      }).catch(
+    function (error) {
+      app.preloader.hide();
+      app.dialog.alert("On a rencontré une erreur pendant la récupération des données")
+    }
+  );
       // Get data time, projectId and date from Form object
       var formEl = this.$$('form#add-user-form')[0];
       var formData = new window.FormData(formEl);
       const options = {
         headers: {'Content-Type': 'application/json'}
       };
+
       axios.post('http://localhost:8180/users', {
         name: formData.get('name'),
         firstname: formData.get('firstname'),

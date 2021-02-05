@@ -1,6 +1,10 @@
 <template>
   <f7-page>
-    <f7-navbar large title="About" title-large="Les projets" back-link="Framework7"></f7-navbar>
+    <f7-navbar large title="About" title-large="Les projets" back-link="back">
+                  <f7-nav-left>
+        <f7-link class="panel-open" open-panel="left" icon="fas fa-bars"></f7-link>
+      </f7-nav-left>
+    </f7-navbar>
     <div class="block-title block-title-medium">{{ project.name}}</div>
     <f7-block inner>
       <p> <strong> Client :</strong> {{ project.clientName}} </p>
@@ -19,25 +23,13 @@
       </f7-accordion-content>
     </f7-list-item>
         <f7-list-item accordion-item title="Temps total passé sur ce projet">
+                <f7-accordion-content>
+        <f7-block>
+            {{totalTime}}
+        </f7-block>
+      </f7-accordion-content>
         </f7-list-item>
   </f7-list>
-          <!-- <p > <strong> Projet: </strong></p>
-          <p class="col">  {{ project.name}} </p>
-        <div class="row no-gap">
-          <div class="col"> <strong> Client: </strong></div>
-          <div class="col">  {{ project.clientName}} </div>
-        </div>         
-        
-        <div class="row no-gap" >          
-            <div class="col"> <strong> Description: </strong></div>
-          <div class="col">  {{project.description}} </div>
-        </div> -->
-
-    <f7-link @click="$f7router.back(`/listProjects-admin/`, {
-              ignoreCache: true,
-              force: true,
-              context: {}
-            })">back</f7-link>
   </f7-page>
 </template>
 <script>
@@ -75,6 +67,13 @@ app.preloader.show();
       });
       app.preloader.hide();
       this.project = currentProject;
+      var total = 0;
+      this.project.times.forEach(function(one)
+        {
+          total+=one.time;
+        }
+        );
+        this.totalTime = total;
       console.log(this.project);
 
     //  console.log(response.data)
@@ -91,6 +90,7 @@ app.preloader.show();
       return {
         projects: [],
         project:'',
+        totalTime: 0
         
 
       };

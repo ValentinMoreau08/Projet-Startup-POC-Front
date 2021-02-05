@@ -1,6 +1,6 @@
 <template>
   <f7-page>
-    <f7-navbar large title="About" title-large="Les projets" back-link="Framework7">
+    <f7-navbar large title="About" title-large="Mes développeurs" back-link="Framework7">
    <f7-nav-right>
         <f7-link
           class="searchbar-enable"
@@ -14,24 +14,15 @@
         search-in="a"
         expandable
       ></f7-searchbar>
-                  <f7-nav-left>
-        <f7-link class="panel-open" open-panel="left" icon="fas fa-bars"></f7-link>
-      </f7-nav-left>
       </f7-navbar>
-    <f7-block-title class="searchbar-found">Liste des projets</f7-block-title>
+    <f7-block-title class="searchbar-found">Liste de mes développeurs</f7-block-title>
         <f7-list class="components-list searchbar-found">
-        <f7-list-item v-for="project in projects" :key="project.id" :title="project.name" :link="`/admin-projectDetails/${project.id}/`" after="Voir plus de détails">
+        <f7-list-item v-for="user in users" :key="user.id" :title="user.name" :link="`/userDetails/${user.id}/`" after="Voir plus de détails">
                 <!-- :link="`/insecte/${insecte.id}/`" media="static/img/icon-insecte.png"> -->
             </f7-list-item>
         </f7-list>    
 
-    <f7-block-title class="searchbar-hide-on-search">Themes</f7-block-title>
-    <f7-list class="searchbar-hide-on-search">
-      <f7-list-item title="iOS Theme" external link="./index.html?theme=ios"></f7-list-item>
-      <f7-list-item title="Material (MD) Theme" external link="./index.html?theme=md"></f7-list-item>
-      <f7-list-item title="Color Themes" link="/color-themes/"></f7-list-item>
-      <f7-list-item title="Github" external link="https://github.com/kevinqqnj"></f7-list-item>
-    </f7-list>
+  
   </f7-page>
 </template>
 <script>
@@ -52,9 +43,9 @@ app.preloader.show();
    app.preloader.hide();
  }, 3000);
 
-//ALL PROJECTS
-    Axios.get("http://localhost:8180"+'/projects').then(response => {
-      this.projects = response.data
+//Manged
+    Axios.get("http://localhost:8180"+'/managers/32/managed').then(response => {
+      this.users = response.data
       //.sort(sortByProperty('firstname'));
       app.preloader.hide();
 
@@ -71,7 +62,7 @@ app.preloader.show();
         data: function () {
 
       return {
-        projects: [],
+        users: [],
 
 
       };

@@ -1,39 +1,32 @@
 <template>
   <f7-page>
-    <f7-navbar title="Changer le manager d'un développeur" back-link="Back">
-            <f7-nav-left>
+    <f7-navbar title="Form components" back-link="Back">
+                    <f7-nav-left>
         <f7-link class="panel-open" open-panel="left" icon="fas fa-bars"></f7-link>
       </f7-nav-left>
     </f7-navbar>
     <div class="block block-strong">
-      <p>Changer le manager d'un développeur</p>
+      <p>Rôle d'un utilisateur</p>
     </div>
-   <f7-list form v-on:submit.prevent="addUser">
-      <f7-list-input label="Développeur"
+   <f7-list form v-on:submit.prevent="changeRole">
+      <f7-list-input label="Utilisateur"
         type="select"
-        placeholder="Développeur"
+        placeholder="Utilisateur"
         @input="form.userId = $event.target.value"
         v-model="form.userId">
       <option v-for="developer in developers" :key="developer.id" :value="developer.id">{{developer.id}} - {{developer.firstname}}</option>
       </f7-list-input>  
-   <f7-list-input label="Manager"
+  <f7-list-input label="Rôle"
         type="select"
-        placeholder="Manager"
-        @input="form.managerId = $event.target.value"
-        v-model="form.managerId">
-      <option v-for="manager in managers" :key="manager.id" :value="manager.id">{{manager.id}} - {{manager.firstname}}</option>
-      </f7-list-input>
+        placeholder="Rôle"
+        @input="form.roleId = $event.target.value"
+        v-model="form.roleId">
+      <option v-for="role in roles" :key="role.id" :value="role.id">{{role.id}} - {{role.label}}</option>
+      </f7-list-input>  
 
-      <!-- <f7-list-item v-for="developer in developers" 
-      :key="developer.id" 
-      checkbox name="my-checkbox" 
-      :title="developer.firstname"
-      @change="checkDeveloper($event,developer.id)"
-      ></f7-list-item> -->
     <button>SUBMIT </button>
 
     </f7-list>
-        <f7-link back>back</f7-link>
   </f7-page>
 </template>
 <script>
@@ -43,14 +36,14 @@ import Axios from "axios";
         data: function () {
 
       return {
-               addUser : function(){
+               changeRole : function(){
         const self = this;
         const app = self.$f7;
         const router = self.$f7router;
-            Axios.patch("http://localhost:8180"+'/users/'+this.form.userId+"/"+this.form.managerId,
+            Axios.patch("http://localhost:8180"+'/users/roles/1/'+this.form.userId+"/"+this.form.roleId,
             ).then(response => {
                 app.preloader.hide();
-                app.dialog.alert("User added successfully");
+                app.dialog.alert("Rôle changé avec succès");
                 console.log(response)
             }).catch(
             function (error) {
@@ -61,9 +54,9 @@ import Axios from "axios";
         
           },
         developers: [],
-        managers: [],
+        roles: [],
         form:{
-            managerId:' ',
+            roleId:' ',
             userId:' ',
         }
 
@@ -87,8 +80,8 @@ import Axios from "axios";
         }, 3000);
 
 
-    Axios.get("http://localhost:8180"+'/managers').then(response => {
-      this.managers = response.data;
+    Axios.get("http://localhost:8180"+'/roles').then(response => {
+      this.roles = response.data;
       app.preloader.hide();
 
     //  console.log(response.data)
@@ -98,7 +91,7 @@ import Axios from "axios";
       app.dialog.alert("On a rencontré une erreur pendant la récupération des données")
     }
   );
- Axios.get("http://localhost:8180"+'/simple_users').then(response => {
+ Axios.get("http://localhost:8180"+'/users').then(response => {
       this.developers = response.data;
     
       app.preloader.hide();
