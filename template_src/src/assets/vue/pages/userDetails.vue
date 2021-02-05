@@ -53,29 +53,7 @@
         </f7-block>
       </f7-accordion-content>
         </f7-list-item>
-        <f7-button fill sheet-open=".demo-sheet">Ajouter un manager</f7-button>
-        <f7-sheet class="demo-sheet" :opened="sheetOpened" @sheet:closed="sheetOpened = false">
-    <f7-toolbar>
-      <div class="left"></div>
-      <div class="right">
-        <f7-link sheet-close>Close</f7-link>
-      </div>
-    </f7-toolbar>
-    <!-- Scrollable sheet content -->
-    <f7-page-content>
-      <f7-block>
-          <f7-list-input label="Manager"
-        type="select"
-        placeholder="Manager"
-        @input="form.managerId = $event.target.value"
-        v-model="form.managerId">
-      <option v-for="manager in managers" :key="manager.id" :value="manager.id">{{manager.id}} - {{manager.firstname}}</option>
-      </f7-list-input>
-              <f7-button fill sheet-close @click="addManager" >Ajouter un manager</f7-button>
 
-      </f7-block>
-    </f7-page-content>
-  </f7-sheet>
   </f7-list>
       
     <f7-link @click="$f7router.back(`/lists-admin/`, {
@@ -161,23 +139,7 @@ app.preloader.show();
               context: {}
             });
         },
-        addManager: function(id)
-        {
-             const self = this;
-        const app = self.$f7;
-        const router = self.$f7router;
-            Axios.patch("http://localhost:8180"+'/users/1/'+this.user.id+"/"+this.form.managerId,
-            ).then(response => {
-                app.preloader.hide();
-                app.dialog.alert("User added successfully");
-                console.log(response)
-            }).catch(
-            function (error) {
-                app.preloader.hide();
-                app.dialog.alert("On a rencontré une erreur pendant la récupération des données");
-            }
-        );
-        }
+
     },
     data: function () {
 

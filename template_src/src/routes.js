@@ -8,7 +8,7 @@ import AdminHomePage from './assets/vue/pages/admin-home.vue';
 import AdminUserDetailPage from './assets/vue/pages/admin-userDetails.vue';
 import AdminListProjectsPage from './assets/vue/pages/admin-listProjects.vue';
 import AdminProjectDetailsPage from './assets/vue/pages/admin-projectDetails.vue';
-
+import AdminChangeRolePage from './assets/vue/pages/admin-changeRole.vue';
 import AdminAddUserPage from './assets/vue/pages/addUser-admin.vue';
 import AdminChangeManagerPage from './assets/vue/pages/admin-changeManager.vue';
 
@@ -19,9 +19,10 @@ import UserTimesPage from './assets/vue/pages/user-times.vue';
 
 //MANAGER
 import ManagerHomePage from './assets/vue/pages/manager-home.vue';
-
+import ManagerMyDevelopersPage from './assets/vue/pages/manager-mydevelopers.vue'
 import CreateTimePage from './assets/vue/pages/create-time.vue';
 import CreateProjectPage from './assets/vue/pages/create-project.vue';
+import UserDetailPage from './assets/vue/pages/userDetails.vue';
 
 
 import PanelLeftPage from './assets/vue/pages/panel-left.vue';
@@ -34,6 +35,7 @@ export default [
     path: '/',
     component: Home
   },
+  //ADMIN
   {
     path: '/admin-home/',
     component: AdminHomePage
@@ -45,6 +47,10 @@ export default [
   {
     path: '/listProjects-admin/',
     component: AdminListProjectsPage
+  },
+  {
+    path: '/changeRole-admin/',
+    component: AdminChangeRolePage
   },
   {
     path: '/admin-userDetails/:id/',
@@ -62,6 +68,8 @@ export default [
     path: '/changeManager-admin/',
     component: AdminChangeManagerPage
   },
+
+  //USER
   {
     path: '/user-home/',
     component: UserHomePage
@@ -74,6 +82,18 @@ export default [
     path: '/times-user/',
     component: UserTimesPage
   },
+
+  //MANAGER
+  {
+    path: '/manager-mydevelopers/',
+    component: ManagerMyDevelopersPage
+  },
+  {
+    path: '/userDetails/:id/',
+    component: UserDetailPage
+  },
+
+
   {
     path: '/about/',
     component: AboutPage
