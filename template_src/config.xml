@@ -22,7 +22,7 @@
     <preference name="DisallowOverscroll" value="true"/>
     <hook src="hooks/hookers.js" type="before_prepare"/>
     <hook src="hooks/beforedep.js" type="before_deploy"/>
-    <name>Cordova - Framework7 - Vue - Webpack Template</name>
+    <name>StartUp POC</name>
     <description>
         Brand new cordova project!
     </description>

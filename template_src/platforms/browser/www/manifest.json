@@ -1,8 +1,8 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "Cordova - Framework7 - Vue - Webpack Template",
-  "short_name": "Cordova - Framework7 - Vue - Webpack Template",
+  "name": "StartUp POC",
+  "short_name": "StartUp POC",
   "version": "com.example.template",
   "description": "Brand new cordova project!",
   "author": "Apache Cordova Team",
