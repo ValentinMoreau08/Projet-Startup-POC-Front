@@ -1,8 +1,6 @@
 <template>
   <f7-page>
-    <f7-navbar back-link="back">
-              <div class="title">Mes développeurs</div>
-
+    <f7-navbar title="Mes développeurs" back-link="back">
                         <f7-nav-right>
         <f7-link class="panel-open" panel-open="#panel-manager" icon="fas fa-bars"></f7-link>
       </f7-nav-right>

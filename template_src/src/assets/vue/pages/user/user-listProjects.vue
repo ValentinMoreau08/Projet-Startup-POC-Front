@@ -16,29 +16,12 @@
         v-for="project in projects"
         :key="project.id"
         :title="project.name"
+        :link="`/projectDetails/${project.id}/`" after="Voir plus de détails"
       >
       </f7-list-item>
     </f7-list>
 
-    <f7-block-title class="searchbar-hide-on-search">Themes</f7-block-title>
-    <f7-list class="searchbar-hide-on-search">
-      <f7-list-item
-        title="iOS Theme"
-        external
-        link="./index.html?theme=ios"
-      ></f7-list-item>
-      <f7-list-item
-        title="Material (MD) Theme"
-        external
-        link="./index.html?theme=md"
-      ></f7-list-item>
-      <f7-list-item title="Color Themes" link="/color-themes/"></f7-list-item>
-      <f7-list-item
-        title="Github"
-        external
-        link="https://github.com/kevinqqnj"
-      ></f7-list-item>
-    </f7-list>
+   
   </f7-page>
 </template>
 <script>
