@@ -1,6 +1,6 @@
 {
-  "name": "Cordova - Framework7 - Vue - Webpack Template",
-  "short_name": "Cordova - Framework7 - Vue - Webpack Template",
+  "name": "StartUp POC",
+  "short_name": "StartUp POC",
   "description": "Description of your app from template",
   "start_url": "index.html",
   "scope": "index.html",

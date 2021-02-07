@@ -23,8 +23,9 @@
         <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
       </f7-list-item>
       <f7-list-item
+        external
+        link="http://localhost:8180/users/1/exportDoc"
         title="Générer compte-rendu (docx)"
-        v-on:click="generateDoc()"
         panel-close
       >
         <f7-icon slot="media" ios="f7:arrow_down_doc_fill" md="material:file_download"></f7-icon>
@@ -45,17 +46,36 @@
 
       </f7-list-item>
     </f7-list>
+   
   </f7-page>
 </template>
 <script>
-import Axios from "axios";
+import axios from 'axios';
 
 export default {
   components: {},
   methods: {
-    generateDoc: function() {
-      Axios.get("http://localhost:8180" + "/users/1/exportDoc");
-    }
+    // generateDoc: function() {
+     
+    //   axios({
+    //     url: "http://localhost:8180/users/1/exportDoc",
+    //    method: 'GET',
+    //   responseType: 'blob', 
+    //      headers: {
+    //             'Content-Type': 'application/json',
+    //             'Accept': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    //         }
+    // }).then((response) => {
+    //   console.log(response)
+    //   const url = window.URL.createObjectURL(new Blob([response.data]));
+    //   const link = document.createElement('a');
+    //   link.href = url;
+    //   link.setAttribute('download', 'export_1.docx');
+    //         link.setAttribute('class', 'external');
+    //   document.body.appendChild(link);
+    //   link.click();
+    // });
+    // }
   }
 };
 </script>

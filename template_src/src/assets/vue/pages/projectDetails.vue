@@ -14,7 +14,7 @@
       <f7-accordion-content>
         <f7-block>
               <f7-list media-list v-if="project.times !==undefined && project.times !== null ">
-               <f7-list-item v-for="thistime in project.times" :key="thistime.id" :link="`/userDetails/${thistime.user.id}/`" :header="thistime.user.firstname" :subtitle="'Temps saisi :'+thistime.time" :after="thistime.date"></f7-list-item>
+               <f7-list-item v-for="thistime in project.times" :key="thistime.id" :link="`/userDetails/${thistime.user.id}/`" :header="thistime.user.firstname" :subtitle="'Temps saisi :'+thistime.time +' heures'" :after="thistime.date"></f7-list-item>
               </f7-list>
     
         </f7-block>
@@ -23,7 +23,7 @@
         <f7-list-item accordion-item title="Temps total passé sur ce projet">
                 <f7-accordion-content>
         <f7-block>
-            {{totalTime}}
+            {{totalTime}} heures
         </f7-block>
       </f7-accordion-content>
         </f7-list-item>

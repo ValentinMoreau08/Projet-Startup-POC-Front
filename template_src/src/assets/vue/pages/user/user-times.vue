@@ -1,27 +1,13 @@
 <template>
   <f7-page>
     <f7-navbar
-   
+    title="Mes temps"
       back-link="back"
     >
           <f7-nav-right>
          <f7-link class="panel-open" panel-open="#panel-user" icon="fas fa-bars"></f7-link>
 
       </f7-nav-right>
-      <f7-nav-right>
-        <f7-link
-          class="searchbar-enable"
-          data-searchbar=".searchbar-components"
-          icon="fas fa-search"
-        ></f7-link>
-      </f7-nav-right>
-      <f7-searchbar
-        class="searchbar-components"
-        search-container=".components-list"
-        search-in="a"
-        expandable
-      ></f7-searchbar>
-                  <div class="title">Mes temps</div>
 
     </f7-navbar>
     <f7-block-title class="searchbar-found">Liste des temps</f7-block-title>
@@ -29,32 +15,17 @@
       <f7-list-item
         v-for="time in times"
         :key="time.id"
-        :title="time.time"
+        :title="time.time+' heures'"
         :after="time.date"
+        :footer="time.project.name"
+        
       >
+
         <!-- :link="`/insecte/${insecte.id}/`" media="static/img/icon-insecte.png"> -->
       </f7-list-item>
     </f7-list>
 
-    <f7-block-title class="searchbar-hide-on-search">Themes</f7-block-title>
-    <f7-list class="searchbar-hide-on-search">
-      <f7-list-item
-        title="iOS Theme"
-        external
-        link="./index.html?theme=ios"
-      ></f7-list-item>
-      <f7-list-item
-        title="Material (MD) Theme"
-        external
-        link="./index.html?theme=md"
-      ></f7-list-item>
-      <f7-list-item title="Color Themes" link="/color-themes/"></f7-list-item>
-      <f7-list-item
-        title="Github"
-        external
-        link="https://github.com/kevinqqnj"
-      ></f7-list-item>
-    </f7-list>
+   
   </f7-page>
 </template>
 <script>
