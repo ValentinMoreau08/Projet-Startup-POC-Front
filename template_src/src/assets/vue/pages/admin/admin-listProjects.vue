@@ -1,24 +1,11 @@
 <template>
   <f7-page>
-    <f7-navbar large title="About" title-large="Les projets" back-link="Framework7">
-   <f7-nav-right>
-        <f7-link
-          class="searchbar-enable"
-          data-searchbar=".searchbar-components"
-          icon="fas fa-search"
-        ></f7-link>
+    <f7-navbar title="Liste des projets" back-link="back">
+                    <f7-nav-right>
+        <f7-link class="panel-open" panel-open="#panel-admin" icon="fas fa-bars"></f7-link>
       </f7-nav-right>
-            <f7-searchbar
-        class="searchbar-components"
-        search-container=".components-list"
-        search-in="a"
-        expandable
-      ></f7-searchbar>
-                  <f7-nav-left>
-        <f7-link class="panel-open" open-panel="left" icon="fas fa-bars"></f7-link>
-      </f7-nav-left>
+
       </f7-navbar>
-    <f7-block-title class="searchbar-found">Liste des projets</f7-block-title>
         <f7-list class="components-list searchbar-found">
         <f7-list-item v-for="project in projects" :key="project.id" :title="project.name" :link="`/admin-projectDetails/${project.id}/`" after="Voir plus de détails">
                 <!-- :link="`/insecte/${insecte.id}/`" media="static/img/icon-insecte.png"> -->

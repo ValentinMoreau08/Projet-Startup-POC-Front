@@ -1,9 +1,9 @@
 <template>
   <f7-page>
     <f7-navbar title="Changer le manager d'un développeur" back-link="Back">
-            <f7-nav-left>
-        <f7-link class="panel-open" open-panel="left" icon="fas fa-bars"></f7-link>
-      </f7-nav-left>
+            <f7-nav-right>
+        <f7-link class="panel-open" panel-open="#panel-admin" icon="fas fa-bars"></f7-link>
+      </f7-nav-right>
     </f7-navbar>
     <div class="block block-strong">
       <p>Changer le manager d'un développeur</p>
@@ -30,7 +30,7 @@
       :title="developer.firstname"
       @change="checkDeveloper($event,developer.id)"
       ></f7-list-item> -->
-    <button>SUBMIT </button>
+    <f7-button large small fill>SUBMIT </f7-button>
 
     </f7-list>
         <f7-link back>back</f7-link>

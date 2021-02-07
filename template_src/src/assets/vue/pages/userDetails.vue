@@ -1,9 +1,6 @@
 <template>
   <f7-page>
     <f7-navbar large title="About" title-large="Les utilisateurs" back-link="back">
-                  <f7-nav-left>
-        <f7-link class="panel-open" open-panel="left" icon="fas fa-bars"></f7-link>
-      </f7-nav-left>
     </f7-navbar>
  <f7-block-title>Details </f7-block-title>
         <f7-chip v-if="user.role !==undefined" :text="user.role.label" color="red"></f7-chip>

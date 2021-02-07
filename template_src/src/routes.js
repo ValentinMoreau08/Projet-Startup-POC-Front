@@ -3,26 +3,31 @@ import AboutPage from './assets/vue/pages/about.vue';
 import FormPage from './assets/vue/pages/form.vue';
 import DynamicRoutePage from './assets/vue/pages/dynamic-route.vue';
 //ADMIN
-import AdminListsPage from './assets/vue/pages/listsAdmin.vue';
-import AdminHomePage from './assets/vue/pages/admin-home.vue';
-import AdminUserDetailPage from './assets/vue/pages/admin-userDetails.vue';
-import AdminListProjectsPage from './assets/vue/pages/admin-listProjects.vue';
-import AdminProjectDetailsPage from './assets/vue/pages/admin-projectDetails.vue';
-import AdminChangeRolePage from './assets/vue/pages/admin-changeRole.vue';
-import AdminAddUserPage from './assets/vue/pages/addUser-admin.vue';
-import AdminChangeManagerPage from './assets/vue/pages/admin-changeManager.vue';
-
+import AdminListsPage from './assets/vue/pages/admin/listsAdmin.vue';
+import AdminHomePage from './assets/vue/pages/admin/admin-home.vue';
+import AdminUserDetailPage from './assets/vue/pages/admin/admin-userDetails.vue';
+import AdminListProjectsPage from './assets/vue/pages/admin/admin-listProjects.vue';
+import AdminProjectDetailsPage from './assets/vue/pages/admin/admin-projectDetails.vue';
+import AdminChangeRolePage from './assets/vue/pages/admin/admin-changeRole.vue';
+import AdminAddUserPage from './assets/vue/pages/admin/addUser-admin.vue';
+import AdminChangeManagerPage from './assets/vue/pages/admin/admin-changeManager.vue';
+import AdminPanelLeftPage from './assets/vue/pages/admin/admin-panel-left.vue';
 //USER
-import UserListProjectsPage from './assets/vue/pages/user-listProjects.vue';
-import UserHomePage from './assets/vue/pages/user-home.vue';
-import UserTimesPage from './assets/vue/pages/user-times.vue';
+import UserListProjectsPage from './assets/vue/pages/user/user-listProjects.vue';
+import UserHomePage from './assets/vue/pages/user/user-home.vue';
+import UserTimesPage from './assets/vue/pages/user/user-times.vue';
+import UserPanelLeftPage from './assets/vue/pages/user/user-panel-left.vue';
 
 //MANAGER
-import ManagerHomePage from './assets/vue/pages/manager-home.vue';
-import ManagerMyDevelopersPage from './assets/vue/pages/manager-mydevelopers.vue'
+import ManagerHomePage from './assets/vue/pages/manager/manager-home.vue';
+import ManagerMyDevelopersPage from './assets/vue/pages/manager/manager-mydevelopers.vue'
 import CreateTimePage from './assets/vue/pages/create-time.vue';
 import CreateProjectPage from './assets/vue/pages/create-project.vue';
 import UserDetailPage from './assets/vue/pages/userDetails.vue';
+import ManagerPanelLeftPage from './assets/vue/pages/manager/manager-panel-left.vue';
+import ManagerListProjectsPage from './assets/vue/pages/manager/manager-listProjects.vue';
+import ProjectDetailPage from './assets/vue/pages/projectDetails.vue';
+
 
 
 import PanelLeftPage from './assets/vue/pages/panel-left.vue';
@@ -82,7 +87,10 @@ export default [
     path: '/times-user/',
     component: UserTimesPage
   },
-
+  {
+    path: '/projectDetails/:id/',
+    component: ProjectDetailPage
+  },
   //MANAGER
   {
     path: '/manager-mydevelopers/',
@@ -92,7 +100,10 @@ export default [
     path: '/userDetails/:id/',
     component: UserDetailPage
   },
-
+  {
+    path: '/listProjects-manager/',
+    component: ManagerListProjectsPage
+  },
 
   {
     path: '/about/',
@@ -106,9 +117,23 @@ export default [
     path: '/dynamic-route/blog/:blogId/post/:postId/',
     component: DynamicRoutePage
   },
+
+  //PANELS
   {
     path: '/panel-left/',
     component: PanelLeftPage
+  },
+  {
+    path: '/admin-panel-left/',
+    component: AdminPanelLeftPage
+  },
+  {
+    path: '/user-panel-left/',
+    component: UserPanelLeftPage
+  },
+  {
+    path: '/manager-panel-left/',
+    component: ManagerPanelLeftPage
   },
   {
     path: '/color-themes/',
