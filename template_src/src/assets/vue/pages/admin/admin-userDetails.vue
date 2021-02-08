@@ -163,7 +163,9 @@ app.preloader.show();
              const self = this;
         const app = self.$f7;
         const router = self.$f7router;
-            Axios.patch("http://localhost:8180"+'/users/1/'+this.user.id+"/"+this.form.managerId,
+                var currentLoggedIn = localStorage.getItem('currentloggedin');
+
+            Axios.patch("http://localhost:8180"+'/users/'+currentLoggedIn+'/'+this.user.id+"/"+this.form.managerId,
             ).then(response => {
                 app.preloader.hide();
                 app.dialog.alert("User added successfully");

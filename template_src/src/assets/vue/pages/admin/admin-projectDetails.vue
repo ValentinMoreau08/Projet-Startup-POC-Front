@@ -78,7 +78,7 @@ app.preloader.show();
       }).catch(
     function (error) {
       app.preloader.hide();
-      app.dialog.alert("On a rencontré une erreur pendant la récupération des données"+error)
+      app.dialog.alert("On a rencontré une erreur pendant la récupération des données ","StartUp POC")
     }
   );
     },

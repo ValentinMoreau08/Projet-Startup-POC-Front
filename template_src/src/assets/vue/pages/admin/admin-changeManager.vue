@@ -95,7 +95,7 @@ import Axios from "axios";
       }).catch(
     function (error) {
       app.preloader.hide();
-      app.dialog.alert("On a rencontré une erreur pendant la récupération des données")
+      app.dialog.alert("On a rencontré une erreur pendant la récupération des données","StartUp POC")
     }
   );
  Axios.get("http://localhost:8180"+'/simple_users').then(response => {
@@ -107,7 +107,7 @@ import Axios from "axios";
       }).catch(
     function (error) {
       app.preloader.hide();
-      app.dialog.alert("On a rencontré une erreur pendant la récupération des données");
+      app.dialog.alert("On a rencontré une erreur pendant la récupération des données","StartUp POC");
     }
   );
   },

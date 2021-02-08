@@ -24,7 +24,7 @@
       </f7-list-item>
       <f7-list-item
         external
-        link="http://localhost:8180/users/1/exportDoc"
+        :link="linkUser"
         title="Générer compte-rendu (docx)"
         panel-close
       >
@@ -53,29 +53,16 @@
 import axios from 'axios';
 
 export default {
+ data: function() {
+   const currentLoggedIn = localStorage.getItem('currentloggedin');
+    return {
+      linkUser: "http://localhost:8180/users/"+currentLoggedIn+"/exportDoc",
+
+    };
+  },
   components: {},
   methods: {
-    // generateDoc: function() {
-     
-    //   axios({
-    //     url: "http://localhost:8180/users/1/exportDoc",
-    //    method: 'GET',
-    //   responseType: 'blob', 
-    //      headers: {
-    //             'Content-Type': 'application/json',
-    //             'Accept': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-    //         }
-    // }).then((response) => {
-    //   console.log(response)
-    //   const url = window.URL.createObjectURL(new Blob([response.data]));
-    //   const link = document.createElement('a');
-    //   link.href = url;
-    //   link.setAttribute('download', 'export_1.docx');
-    //         link.setAttribute('class', 'external');
-    //   document.body.appendChild(link);
-    //   link.click();
-    // });
-    // }
+
   }
 };
 </script>
