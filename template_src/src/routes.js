@@ -38,7 +38,7 @@ import Vuex from './assets/vue/pages/vuex.vue';
 export default [
   {
     path: '/',
-    component: Home
+    component: Vuex
   },
   //ADMIN
   {

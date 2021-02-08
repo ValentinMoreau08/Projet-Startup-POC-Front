@@ -7,9 +7,9 @@
           <ul>
             <li class="item-content item-input">
               <div class="item-inner">
-                <div class="item-title item-label">Username</div>
+                <div class="item-title item-label">Login</div>
                 <div class="item-input-wrap">
-                  <input type="text" name="username" placeholder="Your username" v-model="username"/>
+                  <input type="text" name="username" required validate placeholder="Votre login" v-model="username"/>
                 </div>
               </div>
             </li>
@@ -17,7 +17,7 @@
               <div class="item-inner">
                 <div class="item-title item-label">Password</div>
                 <div class="item-input-wrap">
-                  <input type="password" name="password" placeholder="Your password" v-model="password"/>
+                  <input type="password" name="password" required validate placeholder="Votre mot de passe" v-model="password"/>
                 </div>
               </div>
             </li>
@@ -25,11 +25,11 @@
         </div>
         <div class="list">
           <ul>
-            <li><a href="#" v-on:click="loginAction" class="list-button" >Sign In</a></li>
+            <li><a href="#" v-on:click="loginAction" class="list-button" >Se connecter</a></li>
           </ul>
-          <div class="block-footer">
+          <!-- <div class="block-footer">
             <p><a href="#" class="link back">Close Login Screen</a></p>
-          </div>
+          </div> -->
         </div>
       </form>
     </div>
@@ -71,21 +71,42 @@ export default {
       const self = this;
           const app = self.$f7;
           const router = self.$f7router;
-
       this.users.forEach(function(user){
         if (username == user.login && password == user.password) {
+          app.dialog.alert("Utilisateur connecté: "+user.name,"StartUp POC");
           localStorage.setItem('currentloggedin',user.id);
           console.log(localStorage.getItem('currentloggedin'));
-          router.back(`/`, {
-              ignoreCache: true,
-              force: true,
-              context: {}
-            });
+          console.log(user.role.id);
+          if(user.role.id == 3)
+            {  
+              router.back(`/user-home/`, {
+                ignoreCache: true,
+                force: true,
+                context: {}
+              });
+            };
+          if(user.role.id == 2)
+            {router.back(`/manager-home/`, {
+                ignoreCache: true,
+                force: true,
+                context: {}
+              });
+            };       
+          if(user.role.id == 1)
+            {router.back(`/admin-home/`, {
+                ignoreCache: true,
+                force: true,
+                context: {}
+              });
+            }; 
         }
         else{
-          console.log('not ok');
-        }
+          console.log("not ok");
+          //app.dialog.alert("Votre login ou votre mot de passe est incorrect" ,"StartUp POC");
+
+        };
       })
+
     },
     ...mapActions(["userLogged"])
   }

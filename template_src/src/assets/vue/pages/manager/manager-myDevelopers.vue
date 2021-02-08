@@ -33,8 +33,10 @@ app.preloader.show();
    app.preloader.hide();
  }, 3000);
 
-//Manged
-    Axios.get("http://localhost:8180"+'/managers/32/managed').then(response => {
+//Managed
+        var currentLoggedIn = localStorage.getItem('currentloggedin');
+
+    Axios.get("http://localhost:8180"+'/managers/'+currentLoggedIn+'/managed').then(response => {
       this.users = response.data
       //.sort(sortByProperty('firstname'));
       app.preloader.hide();
@@ -43,7 +45,7 @@ app.preloader.show();
       }).catch(
     function (error) {
       app.preloader.hide();
-      app.dialog.alert("On a rencontré une erreur pendant la récupération des données")
+      app.dialog.alert("On a rencontré une erreur pendant la récupération des données","StartUp POC")
     }
   );
 

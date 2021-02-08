@@ -49,9 +49,9 @@ export default {
     setTimeout(function() {
       app.preloader.hide();
     }, 3000);
-
+   const currentLoggedIn = localStorage.getItem('currentloggedin');
     //ALL PROJECTS
-    Axios.get("http://localhost:8180" + "/users/3/times")
+    Axios.get("http://localhost:8180" + "/users/"+currentLoggedIn+"/times")
       .then(response => {
         this.times = response.data;
         app.preloader.hide();
@@ -60,7 +60,7 @@ export default {
       .catch(function(error) {
         app.preloader.hide();
         app.dialog.alert(
-          "On a rencontré une erreur pendant la récupération des données"
+          "On a rencontré une erreur pendant la récupération des données","StartUp POC"
         );
       });
   },

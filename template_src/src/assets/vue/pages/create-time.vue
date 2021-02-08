@@ -70,8 +70,8 @@ export default {
       const options = {
         headers: {'Content-Type': 'application/json'}
       };
-
-      axios.post('http://localhost:8180/users/1/times', {
+   const currentLoggedIn = localStorage.getItem('currentloggedin');
+      axios.post('http://localhost:8180/users/'+currentLoggedIn+'/times', {
         time: formData.get('time'),
         projectId: formData.get('projectId'),
         date: formData.get('date')

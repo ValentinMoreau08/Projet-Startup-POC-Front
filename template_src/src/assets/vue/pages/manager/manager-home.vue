@@ -25,7 +25,7 @@
       </f7-list-item>
             <f7-list-item
         external
-        link="http://localhost:8180/users/1/exportDoc"
+        :link="linkUser"
         title="Générer compte-rendu (docx)"
         panel-close
       >
@@ -33,7 +33,7 @@
       </f7-list-item>
       <f7-list-item
         external
-        link="http://localhost:8180/managers/managed_times/16/exportdoc"
+        :link="linkManaged"
         title="Générer compte-rendu de mes développeurs (docx)"
         panel-close
       >
@@ -45,6 +45,14 @@
 </template>
 <script>
 export default {
-  components: {}
+  components: {},
+   data: function() {
+   const currentLoggedIn = localStorage.getItem('currentloggedin');
+    return {
+      linkUser: "http://localhost:8180/users/"+currentLoggedIn+"/exportDoc",
+      linkManaged: "http://localhost:8180/managers/managed_times/"+currentLoggedIn+"/exportdoc"
+
+    };
+  },
 };
 </script>

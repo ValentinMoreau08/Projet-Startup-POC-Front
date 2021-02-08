@@ -24,7 +24,7 @@
       <option v-for="role in roles" :key="role.id" :value="role.id">{{role.id}} - {{role.label}}</option>
       </f7-list-input>  
 
-    <f7-button large small fill>SUBMIT </f7-button>
+    <f7-button large small fill @click="changeRole">SUBMIT </f7-button>
 
     </f7-list>
   </f7-page>
@@ -36,23 +36,8 @@ import Axios from "axios";
         data: function () {
 
       return {
-               changeRole : function(){
-        const self = this;
-        const app = self.$f7;
-        const router = self.$f7router;
-            Axios.patch("http://localhost:8180"+'/users/roles/1/'+this.form.userId+"/"+this.form.roleId,
-            ).then(response => {
-                app.preloader.hide();
-                app.dialog.alert("Rôle changé avec succès");
-                console.log(response)
-            }).catch(
-            function (error) {
-                app.preloader.hide();
-                app.dialog.alert("On a rencontré une erreur pendant la récupération des données");
-            }
-        );
         
-          },
+
         developers: [],
         roles: [],
         form:{
@@ -65,7 +50,24 @@ import Axios from "axios";
       
     },
       methods: {
- 
+         changeRole : function(){
+        const self = this;
+        const app = self.$f7;
+        const router = self.$f7router;
+        var currentLoggedIn = localStorage.getItem('currentloggedin');
+            Axios.patch("http://localhost:8180"+'/users/roles/'+currentLoggedIn+'/'+this.form.userId+"/"+this.form.roleId,
+            ).then(response => {
+                app.preloader.hide();
+                app.dialog.alert("Rôle changé avec succès","StartUp POC");
+                console.log(response)
+            }).catch(
+            function (error) {
+                app.preloader.hide();
+                app.dialog.alert("On a rencontré une erreur pendant la récupération des données");
+            }
+        );
+        
+          },
       },
        
       
