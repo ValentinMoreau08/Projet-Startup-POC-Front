@@ -23,6 +23,22 @@
             <f7-list-item link="/listProjects-manager/" title="Liste des projets" panel-close>
         <f7-icon slot="media" ios="f7:list_bullet" md="material:list_bullet"></f7-icon>
       </f7-list-item>
+            <f7-list-item
+        external
+        link="http://localhost:8180/users/1/exportDoc"
+        title="Générer compte-rendu (docx)"
+        panel-close
+      >
+        <f7-icon slot="media" ios="f7:arrow_down_doc_fill" md="material:file_download"></f7-icon>
+      </f7-list-item>
+      <f7-list-item
+        external
+        link="http://localhost:8180/managers/managed_times/16/exportdoc"
+        title="Générer compte-rendu de mes développeurs (docx)"
+        panel-close
+      >
+        <f7-icon slot="media" ios="f7:arrow_down_doc_fill" md="material:file_download"></f7-icon>
+      </f7-list-item>
     </f7-list>
 
   </f7-page>
