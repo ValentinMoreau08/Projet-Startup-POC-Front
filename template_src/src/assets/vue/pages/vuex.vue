@@ -74,7 +74,7 @@ export default {
 
       this.users.forEach(function(user){
         if (username == user.login && password == user.password) {
-          localStorage.setItem('currentloggedin',JSON.stringify(user));
+          localStorage.setItem('currentloggedin',user.id);
           console.log(localStorage.getItem('currentloggedin'));
           router.back(`/`, {
               ignoreCache: true,
