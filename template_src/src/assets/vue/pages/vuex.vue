@@ -72,13 +72,10 @@ export default {
           const app = self.$f7;
           const router = self.$f7router;
 
-      this.$store.dispatch("login", {
-        username: this.username,
-        password: this.password
-      })
       this.users.forEach(function(user){
         if (username == user.login && password == user.password) {
-          
+          localStorage.setItem('currentloggedin',JSON.stringify(user));
+          console.log(localStorage.getItem('currentloggedin'));
           router.back(`/`, {
               ignoreCache: true,
               force: true,
@@ -86,7 +83,7 @@ export default {
             });
         }
         else{
-          
+          console.log('not ok');
         }
       })
     },
