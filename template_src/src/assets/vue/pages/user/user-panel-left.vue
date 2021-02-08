@@ -28,6 +28,9 @@
         title="Consulter mes temps"
         panel-close
       ></f7-list-item>
+      <f7-list-item link="/" title="Déconnexion" @click.native="logout()" panel-close>
+        <f7-icon slot="media" ios="f7:square_arrow_left" md="material:power_settings_new"></f7-icon>
+      </f7-list-item>
        </f7-list>
        <f7-button fill color="black" @click.native="setLayoutTheme('dark')">Mode sombre</f7-button>
 
@@ -45,6 +48,9 @@ export default {
         if (currentColorClass) app.root.removeClass(currentColorClass[0]);
         app.root.addClass(`color-theme-white`);
       },
+      logout() {
+        localStorage.removeItem("currentloggedin");
+      }
   }
 };
 </script>
