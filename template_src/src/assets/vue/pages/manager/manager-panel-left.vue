@@ -21,7 +21,7 @@
       </f7-list-item>
             <f7-list-item
         external
-        link="http://localhost:8180/users/1/exportDoc"
+        link="/manager-home/"
         title="Générer compte-rendu (docx)"
         panel-close
       >
@@ -29,7 +29,7 @@
       </f7-list-item>
       <f7-list-item
         external
-        link="http://localhost:8180/managers/managed_times/16/exportdoc"
+        link="/manager-home/"
         title="Générer compte-rendu de mes développeurs (docx)"
         panel-close
       >

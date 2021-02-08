@@ -21,7 +21,7 @@
       <f7-list-item link="/addUser-admin/" title="Ajouter un utilisateur" panel-close>
         <f7-icon slot="media" ios="f7:person_badge_plus_fill" md="material:person_add"></f7-icon>
       </f7-list-item>
-      <f7-list-item link="/changeManager-admin/" title="Changer le manager d'un développeur" panel-close>
+      <f7-list-item link="/changeManager-admin/" title="Attribuer un manager" panel-close>
         <f7-icon slot="media" ios="f7:person_2_fill" md="material:person_2_fill"></f7-icon>
       </f7-list-item>
       <f7-list-item link="/changeRole-admin/" title="Changer le rôle d'un utilisateur" panel-close>

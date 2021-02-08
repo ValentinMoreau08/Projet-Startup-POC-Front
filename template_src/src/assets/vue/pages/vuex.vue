@@ -15,7 +15,7 @@
             </li>
             <li class="item-content item-input">
               <div class="item-inner">
-                <div class="item-title item-label">Password</div>
+                <div class="item-title item-label">Mot de passe</div>
                 <div class="item-input-wrap">
                   <input type="password" name="password" required validate placeholder="Votre mot de passe" v-model="password"/>
                 </div>

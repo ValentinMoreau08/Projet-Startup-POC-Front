@@ -6,9 +6,9 @@
       </f7-nav-right>
     </f7-navbar>
     <div class="block block-strong">
-      <p>Changer le manager d'un développeur</p>
+      <p>Attribuer un manager </p>
     </div>
-   <f7-list form v-on:submit.prevent="addUser">
+   <f7-list form v-on:submit.prevent="changeManager">
       <f7-list-input label="Développeur"
         type="select"
         placeholder="Développeur"
@@ -30,10 +30,9 @@
       :title="developer.firstname"
       @change="checkDeveloper($event,developer.id)"
       ></f7-list-item> -->
-    <f7-button large small fill>SUBMIT </f7-button>
+    <f7-button large small fill @click="changeManager">SUBMIT </f7-button>
 
     </f7-list>
-        <f7-link back>back</f7-link>
   </f7-page>
 </template>
 <script>
@@ -43,23 +42,7 @@ import Axios from "axios";
         data: function () {
 
       return {
-               addUser : function(){
-        const self = this;
-        const app = self.$f7;
-        const router = self.$f7router;
-            Axios.patch("http://localhost:8180"+'/users/'+this.form.userId+"/"+this.form.managerId,
-            ).then(response => {
-                app.preloader.hide();
-                app.dialog.alert("User added successfully");
-                console.log(response)
-            }).catch(
-            function (error) {
-                app.preloader.hide();
-                app.dialog.alert("On a rencontré une erreur pendant la récupération des données");
-            }
-        );
-        
-          },
+
         developers: [],
         managers: [],
         form:{
@@ -72,7 +55,25 @@ import Axios from "axios";
       
     },
       methods: {
- 
+                changeManager : function(){
+        const self = this;
+        const app = self.$f7;
+        const router = self.$f7router;
+                var currentLoggedIn = localStorage.getItem('currentloggedin');
+
+            Axios.patch("http://localhost:8180"+'/users/'+currentLoggedIn+'/'+this.form.userId+"/"+this.form.managerId,
+            ).then(response => {
+                app.preloader.hide();
+                app.dialog.alert("Le manager a bien été attribué !","StartUp POC");
+                console.log(response)
+            }).catch(
+            function (error) {
+                app.preloader.hide();
+                app.dialog.alert("On a rencontré une erreur pendant la récupération des données","StartUp POC");
+            }
+        );
+        
+          },
       },
        
       

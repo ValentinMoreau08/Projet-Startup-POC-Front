@@ -46,7 +46,7 @@
         <f7-list-item accordion-item title="Temps total">
                 <f7-accordion-content>
         <f7-block>
-            {{totalTime}}
+            {{totalTime}} heures
         </f7-block>
       </f7-accordion-content>
         </f7-list-item>

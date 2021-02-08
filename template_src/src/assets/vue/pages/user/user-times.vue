@@ -18,10 +18,10 @@
         :title="time.time+' heures'"
         :after="time.date"
         :footer="time.project.name"
-        
+        :link="`/projectDetails/${project.id}/`" 
+
       >
 
-        <!-- :link="`/insecte/${insecte.id}/`" media="static/img/icon-insecte.png"> -->
       </f7-list-item>
     </f7-list>
 

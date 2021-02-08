@@ -1,6 +1,6 @@
 <template>
   <f7-page>
-    <f7-block-title>Développeur</f7-block-title>
+    <f7-block-title>Utilisateur</f7-block-title>
 
     <f7-block-title></f7-block-title>
          <f7-list class="components-list searchbar-found">
@@ -13,7 +13,7 @@
       </f7-list-item>
       <f7-list-item
         title="Générer compte-rendu (docx)"
-        v-on:click="generateDoc()"
+        link="/user-home/"
         panel-close
       >
         <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
@@ -22,12 +22,17 @@
         link="/create-time/"
         title="Saisir mes temps"
         panel-close
-      ></f7-list-item>
+      >
+              <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
+
+      </f7-list-item>
       <f7-list-item
         link="/times-user/"
         title="Consulter mes temps"
         panel-close
-      ></f7-list-item>
+      >
+              <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
+</f7-list-item>
       <f7-list-item link="/" title="Déconnexion" @click.native="logout()" panel-close>
         <f7-icon slot="media" ios="f7:square_arrow_left" md="material:power_settings_new"></f7-icon>
       </f7-list-item>

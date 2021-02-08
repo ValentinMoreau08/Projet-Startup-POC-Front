@@ -13,7 +13,7 @@
       <f7-list-item link="/addUser-admin/" title="Ajouter utilisateur" panel-close>
         <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
       </f7-list-item>
-      <f7-list-item link="/changeManager-admin/" title="Changer manager" panel-close>
+      <f7-list-item link="/changeManager-admin/" title="Attribuer manager" panel-close>
         <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
       </f7-list-item>
       <f7-list-item link="/changeRole-admin/" title="Changer rôle" panel-close>

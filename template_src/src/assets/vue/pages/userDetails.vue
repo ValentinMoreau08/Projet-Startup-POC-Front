@@ -38,7 +38,7 @@
       <f7-accordion-content>
         <f7-block>
               <f7-list media-list v-if="user.times !==undefined && user.times !== null ">
-               <f7-list-item v-for="thistime in user.times" :key="thistime.id" :link="`/admin-userDetails/${user.id}/`" :header="thistime.project.name" :subtitle="'Temps saisi :'+thistime.time" :after="thistime.date"></f7-list-item>
+               <f7-list-item v-for="thistime in user.times" :key="thistime.id" :link="`/userDetails/${user.id}/`" :header="thistime.project.name" :subtitle="'Temps saisi :'+thistime.time" :after="thistime.date"></f7-list-item>
               </f7-list>
         </f7-block>
       </f7-accordion-content>
