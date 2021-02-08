@@ -1,7 +1,6 @@
 <template>
   <f7-page>
-    <f7-navbar title="Détails de l'utilisateur" back-link="back">
-
+    <f7-navbar title="Détails de l'utilisateur" back>
     </f7-navbar>
         <f7-chip v-if="user.role !==undefined" :text="user.role.label" color="red"></f7-chip>
         <div class="row no-gap">
@@ -51,6 +50,9 @@
       </f7-accordion-content>
         </f7-list-item>
         <f7-button fill sheet-open=".demo-sheet">Ajouter un manager</f7-button>
+      <f7-block>
+        <f7-button data-force="true" class="back"> Retour </f7-button>
+      </f7-block>
         <f7-sheet class="demo-sheet" :opened="sheetOpened" @sheet:closed="sheetOpened = false">
     <f7-toolbar>
       <div class="left"></div>
@@ -72,14 +74,11 @@
 
       </f7-block>
     </f7-page-content>
+
   </f7-sheet>
   </f7-list>
       
-    <f7-link @click="$f7router.back(`/lists-admin/`, {
-              ignoreCache: true,
-              force: true,
-              context: {}
-            })">back</f7-link>
+  
 
   </f7-page>
 </template>
@@ -176,6 +175,14 @@ app.preloader.show();
                 app.dialog.alert("On a rencontré une erreur pendant la récupération des données");
             }
         );
+        },
+        back(){
+                   
+      router.back(`/admin-home/`, {
+                ignoreCache: true,
+                force: true,
+                context: {}
+              });
         }
     },
     data: function () {
@@ -190,6 +197,7 @@ app.preloader.show();
         {
           managerId: ' ',
         }
+
         
 
       };

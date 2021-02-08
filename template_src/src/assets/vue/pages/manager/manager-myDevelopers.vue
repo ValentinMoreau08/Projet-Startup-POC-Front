@@ -1,9 +1,14 @@
 <template>
   <f7-page>
-    <f7-navbar title="Mes développeurs" back-link="back">
+    <f7-navbar >
+                  <f7-nav-left>
+         <f7-link href="/manager-home/"  icon-f7="house"></f7-link>
+      </f7-nav-left>
+<div class="title">Mes développeurs</div>
                         <f7-nav-right>
         <f7-link class="panel-open" panel-open="#panel-manager" icon="fas fa-bars"></f7-link>
       </f7-nav-right>
+      
       </f7-navbar>
     <f7-block-title class="searchbar-found">Liste de mes développeurs</f7-block-title>
         <f7-list class="components-list searchbar-found">

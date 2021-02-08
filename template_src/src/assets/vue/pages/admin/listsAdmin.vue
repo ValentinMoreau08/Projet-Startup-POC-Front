@@ -1,6 +1,9 @@
 <template>
   <f7-page>
-   <f7-navbar back-link="Back">
+   <f7-navbar>
+           <f7-nav-left>
+         <f7-link href="/admin-home/"  icon-f7="house"></f7-link>
+      </f7-nav-left>
            <div class="title">Les utilisateurs</div>
 
       <f7-nav-right>

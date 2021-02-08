@@ -47,6 +47,7 @@ export default new Vue({
     window.addEventListener('load', () => {
       // run after everything is in-place
       FastClick.attach(document.body);
+      
     });
   }
 });

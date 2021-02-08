@@ -61,7 +61,7 @@ import Axios from "axios";
         const router = self.$f7router;
                 var currentLoggedIn = localStorage.getItem('currentloggedin');
 
-            Axios.patch("http://localhost:8180"+'/users/'+currentLoggedIn+'/'+this.form.userId+"/"+this.form.managerId,
+            Axios.patch("http://localhost:8180"+'/users/manager/'+currentLoggedIn+'/'+this.form.userId+"/"+this.form.managerId,
             ).then(response => {
                 app.preloader.hide();
                 app.dialog.alert("Le manager a bien été attribué !","StartUp POC");

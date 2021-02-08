@@ -35,6 +35,7 @@ export default {
       f7Statusbar,
     },
     data() {
+        
         return {
             f7params: {
                 theme,

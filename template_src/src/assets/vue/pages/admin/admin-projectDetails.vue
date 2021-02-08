@@ -1,6 +1,6 @@
 <template>
   <f7-page>
-    <f7-navbar title="Les projets" back-link="back">
+    <f7-navbar title="Les projets" >
 
     </f7-navbar>
     <div class="block-title block-title-medium">{{ project.name}}</div>
@@ -28,6 +28,9 @@
       </f7-accordion-content>
         </f7-list-item>
   </f7-list>
+      <f7-block>
+        <f7-button data-force="true" class="back"> Retour </f7-button>
+      </f7-block>
   </f7-page>
 </template>
 <script>

@@ -40,14 +40,17 @@ import { mapState, mapActions } from "vuex";
 import Axios from "axios";
 
 export default {
+  
   data() {
+   
       return {
+  
           users:[],
           username: '',
           password: ''
       }
     },
-  created() {
+  created: function() {
     Axios.get("http://localhost:8180"+'/users').then(response => {
         this.users = response.data
         //console.log(response.data)
@@ -67,17 +70,21 @@ export default {
   methods: {
     
     loginAction: function() {
+
+
       const { username, password } = this;
       const self = this;
-          const app = self.$f7;
-          const router = self.$f7router;
+      const app = self.$f7;
+      const router = self.$f7router;
+
       this.users.forEach(function(user){
         if (username == user.login && password == user.password) {
           app.dialog.alert("Utilisateur connecté: "+user.name,"StartUp POC");
           localStorage.setItem('currentloggedin',user.id);
+          localStorage.setItem('currentRoleloggedin',user.role.id);
           console.log(localStorage.getItem('currentloggedin'));
           console.log(user.role.id);
-          if(user.role.id == 3)
+          if(user.role.id == "3")
             {  
               router.back(`/user-home/`, {
                 ignoreCache: true,
@@ -85,14 +92,14 @@ export default {
                 context: {}
               });
             };
-          if(user.role.id == 2)
+          if(user.role.id == "2")
             {router.back(`/manager-home/`, {
                 ignoreCache: true,
                 force: true,
                 context: {}
               });
             };       
-          if(user.role.id == 1)
+          if(user.role.id == "1")
             {router.back(`/admin-home/`, {
                 ignoreCache: true,
                 force: true,
