@@ -13,7 +13,7 @@
       </f7-list-item>
       <f7-list-item
         title="Générer compte-rendu (docx)"
-        link="/user-home/"
+        link="/user-generate/"
         panel-close
       >
         <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>

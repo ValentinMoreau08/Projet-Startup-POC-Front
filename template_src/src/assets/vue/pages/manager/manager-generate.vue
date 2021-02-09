@@ -1,6 +1,13 @@
 <template>
   <f7-page>
-    <f7-navbar title="Générer compte rendu" back>
+    <f7-navbar >
+                  <f7-nav-left>
+         <f7-link href="/manager-home/"  icon-f7="house"></f7-link>
+      </f7-nav-left>
+      <div class="title">Générer compte rendu</div>
+                         <f7-nav-right>
+        <f7-link class="panel-open" panel-open="#panel-manager" icon="fas fa-bars"></f7-link>
+      </f7-nav-right>
     </f7-navbar>
     <f7-list>
       <f7-list-item
@@ -26,7 +33,6 @@
               <f7-button  sheet-open=".demo-sheet">Générer compte rendu mensuel</f7-button>
         </f7-list-item>
 
-        <f7-button data-force="true" class="back"> Retour </f7-button>
         
       
       </f7-list>

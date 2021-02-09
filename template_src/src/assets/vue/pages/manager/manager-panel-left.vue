@@ -21,20 +21,13 @@
       </f7-list-item>
             <f7-list-item
         external
-        link="/manager-home/"
+        link="/manager-generate/"
         title="Générer compte-rendu (docx)"
         panel-close
       >
         <f7-icon slot="media" ios="f7:arrow_down_doc_fill" md="material:file_download"></f7-icon>
       </f7-list-item>
-      <f7-list-item
-        external
-        link="/manager-home/"
-        title="Générer compte-rendu de mes développeurs (docx)"
-        panel-close
-      >
-        <f7-icon slot="media" ios="f7:arrow_down_doc_fill" md="material:file_download"></f7-icon>
-      </f7-list-item>
+
 
       <f7-list-item link="/" title="Déconnexion" @click.native="logout()" panel-close>
         <f7-icon slot="media" ios="f7:square_arrow_left" md="material:square_arrow_left"></f7-icon>
