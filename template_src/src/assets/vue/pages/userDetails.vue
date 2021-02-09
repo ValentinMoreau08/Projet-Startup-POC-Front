@@ -64,7 +64,7 @@
               <f7-list-item
                 v-for="thistime in user.times"
                 :key="thistime.id"
-                :link="`/userDetails/${user.id}/`"
+                :link="`/projectDetails/${thistime.project.id}/`"
                 :header="thistime.project.name"
                 :subtitle="'Temps saisi :' + thistime.time"
                 :after="thistime.date"
