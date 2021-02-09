@@ -1,7 +1,4 @@
-import Home from './assets/vue/pages/home.vue';
 import Vuex from './assets/vue/pages/vuex.vue';
-import AboutPage from './assets/vue/pages/about.vue';
-import FormPage from './assets/vue/pages/form.vue';
 import DynamicRoutePage from './assets/vue/pages/dynamic-route.vue';
 //ADMIN
 import AdminListsPage from './assets/vue/pages/admin/listsAdmin.vue';
@@ -30,11 +27,6 @@ import ManagerPanelLeftPage from './assets/vue/pages/manager/manager-panel-left.
 import ManagerListProjectsPage from './assets/vue/pages/manager/manager-listProjects.vue';
 import ProjectDetailPage from './assets/vue/pages/projectDetails.vue';
 import ManagerGeneratePage from './assets/vue/pages/manager/manager-generate.vue';
-
-
-import PanelLeftPage from './assets/vue/pages/panel-left.vue';
-import ColorThemes from './assets/vue/pages/color-themes.vue';
-import Chat from './assets/vue/pages/chat.vue';
 
 export default [
   {
@@ -116,23 +108,11 @@ export default [
   },
 
   {
-    path: '/about/',
-    component: AboutPage
-  },
-  {
-    path: '/form/',
-    component: FormPage
-  },
-  {
     path: '/dynamic-route/blog/:blogId/post/:postId/',
     component: DynamicRoutePage
   },
 
   //PANELS
-  {
-    path: '/panel-left/',
-    component: PanelLeftPage
-  },
   {
     path: '/admin-panel-left/',
     component: AdminPanelLeftPage
@@ -144,14 +124,6 @@ export default [
   {
     path: '/manager-panel-left/',
     component: ManagerPanelLeftPage
-  },
-  {
-    path: '/color-themes/',
-    component: ColorThemes
-  },
-  {
-    path: '/chat/',
-    component: Chat
   },
   {
     path: '/vuex/',
