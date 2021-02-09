@@ -18,7 +18,7 @@
         :title="time.time+' heures'"
         :after="time.date"
         :footer="time.project.name"
-        :link="`/projectDetails/${project.id}/`" 
+        :link="`/projectDetails/${time.project.id}/`" 
 
       >
 
