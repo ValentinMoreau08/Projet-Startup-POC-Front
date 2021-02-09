@@ -23,7 +23,10 @@
             <f7-list-item link="/listProjects-manager/" title="Liste des projets" panel-close>
         <f7-icon slot="media" ios="f7:list_bullet" md="material:list_bullet"></f7-icon>
       </f7-list-item>
-            <f7-list-item
+      <f7-list-item link="/manager-generate/" title="Générer compte rendu (docx)" panel-close>
+        <f7-icon slot="media" ios="f7:arrow_down_doc_fill" md="material:file_download"></f7-icon>
+      </f7-list-item>
+            <!-- <f7-list-item
         external
         :link="linkUser"
         title="Générer compte-rendu (docx)"
@@ -38,7 +41,7 @@
         panel-close
       >
         <f7-icon slot="media" ios="f7:arrow_down_doc_fill" md="material:file_download"></f7-icon>
-      </f7-list-item>
+      </f7-list-item> -->
     </f7-list>
 
   </f7-page>
@@ -47,12 +50,12 @@
 export default {
   components: {},
    data: function() {
-   const currentLoggedIn = localStorage.getItem('currentloggedin');
-    return {
-      linkUser: "http://localhost:8180/users/"+currentLoggedIn+"/exportDoc",
-      linkManaged: "http://localhost:8180/managers/managed_times/"+currentLoggedIn+"/exportdoc"
+  //  const currentLoggedIn = localStorage.getItem('currentloggedin');
+  //   return {
+  //     linkUser: "http://localhost:8180/users/"+currentLoggedIn+"/exportDoc",
+  //     linkManaged: "http://localhost:8180/managers/managed_times/"+currentLoggedIn+"/exportdoc"
 
-    };
+  //   };
   },
 };
 </script>

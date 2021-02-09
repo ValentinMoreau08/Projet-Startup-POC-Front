@@ -18,6 +18,7 @@ import UserListProjectsPage from './assets/vue/pages/user/user-listProjects.vue'
 import UserHomePage from './assets/vue/pages/user/user-home.vue';
 import UserTimesPage from './assets/vue/pages/user/user-times.vue';
 import UserPanelLeftPage from './assets/vue/pages/user/user-panel-left.vue';
+import UserGeneratePage from './assets/vue/pages/user/user-generate.vue'
 
 //MANAGER
 import ManagerHomePage from './assets/vue/pages/manager/manager-home.vue';
@@ -28,7 +29,7 @@ import UserDetailPage from './assets/vue/pages/userDetails.vue';
 import ManagerPanelLeftPage from './assets/vue/pages/manager/manager-panel-left.vue';
 import ManagerListProjectsPage from './assets/vue/pages/manager/manager-listProjects.vue';
 import ProjectDetailPage from './assets/vue/pages/projectDetails.vue';
-
+import ManagerGeneratePage from './assets/vue/pages/manager/manager-generate.vue';
 
 
 import PanelLeftPage from './assets/vue/pages/panel-left.vue';
@@ -91,6 +92,10 @@ export default [
     path: '/projectDetails/:id/',
     component: ProjectDetailPage
   },
+  {
+    path: '/user-generate/',
+    component: UserGeneratePage
+  },
   //MANAGER
   {
     path: '/manager-mydevelopers/',
@@ -103,6 +108,11 @@ export default [
   {
     path: '/listProjects-manager/',
     component: ManagerListProjectsPage
+  },
+
+  {
+    path: '/manager-generate/',
+    component: ManagerGeneratePage
   },
 
   {

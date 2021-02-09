@@ -22,14 +22,15 @@
       >
         <f7-icon slot="media" ios="f7:info" md="material:info"></f7-icon>
       </f7-list-item>
+
       <f7-list-item
-        external
-        :link="linkUser"
-        title="Générer compte-rendu (docx)"
+        link="/user-generate/"
+        title="Générer compte rendu (docx)"
         panel-close
       >
-        <f7-icon slot="media" ios="f7:arrow_down_doc_fill" md="material:file_download"></f7-icon>
+              <f7-icon slot="media" ios="f7:arrow_down_doc_fill" md="material:file_download"></f7-icon>
       </f7-list-item>
+
       <f7-list-item
         link="/create-time/"
         title="Saisir mes temps"
