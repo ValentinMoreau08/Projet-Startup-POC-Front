@@ -51,11 +51,9 @@ export default {
   components: {},
    data: function() {
   //  const currentLoggedIn = localStorage.getItem('currentloggedin');
-  //   return {
-  //     linkUser: "http://localhost:8180/users/"+currentLoggedIn+"/exportDoc",
-  //     linkManaged: "http://localhost:8180/managers/managed_times/"+currentLoggedIn+"/exportdoc"
-
-  //   };
+    return {
+  
+     };
   },
 };
 </script>
