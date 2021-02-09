@@ -2,7 +2,7 @@
   <f7-page>
     <f7-navbar >
             <f7-nav-left>
-         <f7-link href="/user-home/"  icon-f7="house"></f7-link>
+         <f7-link href="/admin-home/"  icon-f7="house"></f7-link>
       </f7-nav-left>
       <div class="title">Liste des projets</div>
                     <f7-nav-right>
