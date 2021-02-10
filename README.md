@@ -10,6 +10,7 @@ This project uses:
 * [Cordova](https://cordova.apache.org/)
 * [FontAwesome 5](http://fontawesome.io/)
 * [Babel Loader 7](https://github.com/babel/babel-loader)
+* [Axios](https://github.com/axios/axios)
 
 
 ## Minimum Requirements
@@ -22,6 +23,7 @@ This project uses:
 - Navigate into template cloned folder : `cd Projet-Startup-POC-Front/template_src`
 - Use latest branch : `git checkout master`
 - Install with npm : `npm install`
+
   
 ## Start
 #### WEB
