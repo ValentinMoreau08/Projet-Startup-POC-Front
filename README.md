@@ -33,6 +33,7 @@ This project uses:
 * Run command `adb reverse tcp:8180 tcp:8180` so that you can access your api from your localhost:8180 
 * Inside Projet-Startup-POC-Front/template_src use command : `cordova run android`
 * Note: You can also find the apk in the root of the project
+**Requirements:** _You are going to need JDK8 to run the android version, cordova does not support other JDK version.
 
 ## Composition
 
@@ -47,7 +48,14 @@ This project uses:
 #### Routes
 All the routes are specified in [route.js](https://github.com/ValentinMoreau08/Projet-Startup-POC-Front/blob/master/template_src/src/routes.js)
 
-
+## Platforms
+#### Existing platforms
+* **Add Browser:** `cordova platform add browser`
+* **Add Android:** `cordova platform add android`
+#### Available platforms to add
+* **Add Ios:** `cordova platform add ios`
+#### Remove unwanted paltform
+* `cordova platform remeve "platform_name"`
 
 
 
