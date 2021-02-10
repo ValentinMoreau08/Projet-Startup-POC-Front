@@ -1,4 +1,4 @@
-![template logo](logo_v2.png "template logo")
+![template logo](logo_v2.png "../template logo")
 
 # Projet-Statup-POC-Front
 
