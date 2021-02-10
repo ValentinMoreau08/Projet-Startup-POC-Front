@@ -31,3 +31,21 @@ This project uses:
 * Run command `adb reverse tcp:8180 tcp:8180` so that you can access your api from your localhost:8180 
 * Inside Projet-Startup-POC-Front/template_src use command : `cordova run android`
 * Note: You can also find the apk in the root of the project
+
+## Composition
+
+#### Vue
+You can find all vue pages in here :  [Vues](https://github.com/ValentinMoreau08/Projet-Startup-POC-Front/tree/master/template_src/src/assets/vue/pages)
+There are 3 folders : 
+* Admin folder
+* User folder
+* Manager folder
+You can also find the vue pages that are common to some roles in the root of vue/pages folder.
+
+#### Routes
+All the routes are specified in [route.js](https://github.com/ValentinMoreau08/Projet-Startup-POC-Front/blob/master/template_src/src/routes.js)
+
+
+
+
+
