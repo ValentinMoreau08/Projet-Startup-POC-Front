@@ -6,7 +6,7 @@
 - Use latest branch : `git checkout master`
 - Install with npm : `npm install`
   
-  ## Start
+## Start
   - WEB
 * Inside Projet-Startup-POC-Front/template_src use command : `cordova run browser -- --live-reload`
   - Mobile (Android)
