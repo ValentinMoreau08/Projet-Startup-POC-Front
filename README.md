@@ -35,12 +35,12 @@ This project uses:
 ## Composition
 
 #### Vue
-You can find all vue pages in here :  [Vues](https://github.com/ValentinMoreau08/Projet-Startup-POC-Front/tree/master/template_src/src/assets/vue/pages)
-There are 3 folders : 
-* Admin folder
-* User folder
-* Manager folder
-You can also find the vue pages that are common to some roles in the root of vue/pages folder.
+- You can find all vue pages in here :  [Vues](https://github.com/ValentinMoreau08/Projet-Startup-POC-Front/tree/master/template_src/src/assets/vue/pages) 
+- There are 3 folders : 
+  * Admin folder
+  * User folder
+  * Manager folder
+- You can also find the vue pages that are common to some roles in the root of vue/pages folder.
 
 #### Routes
 All the routes are specified in [route.js](https://github.com/ValentinMoreau08/Projet-Startup-POC-Front/blob/master/template_src/src/routes.js)
